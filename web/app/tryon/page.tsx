@@ -4,6 +4,8 @@ import type React from "react"
 
 import { gql, useMutation, useQuery } from "@apollo/client"
 import { useState } from "react"
+import Image from "next/image"
+
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
@@ -11,6 +13,12 @@ import { Label } from "@/components/ui/label"
 import { Loader2, Upload, History, AlertCircle } from "lucide-react"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import Link from "next/link"
+
+type TryOnItem = {
+  id: string
+  imageUrl: string
+  createdAt: string
+}
 
 const TRY_ON_CLOTHES = gql`
   mutation TryOnClothes($input: TryOnInput!) {
@@ -164,16 +172,17 @@ export default function TryOnPage() {
           )}
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {data?.getTryOns?.map((item: any) => (
+            {data?.getTryOns?.map((item: TryOnItem) => (
               <div key={item.id} className="w-full">
                 <Card
                   className="overflow-hidden border-[#e5e1d8] shadow-sm hover:shadow-md transition-shadow duration-300"
                 >
                   <div className="aspect-[3/4] relative">
-                    <img
+                    <Image
                       src={item.imageUrl || "/placeholder.svg"}
                       alt="試着結果"
-                      className="w-full h-full object-cover"
+                      fill
+                      className="object-cover"
                     />
                   </div>
                   <CardFooter className="bg-white p-4">
