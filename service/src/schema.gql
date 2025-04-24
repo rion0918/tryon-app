@@ -6,8 +6,20 @@ type AuthOutput {
   accessToken: String!
 }
 
+type TryOn {
+  id: Int!
+  imageUrl: String!
+  createdAt: DateTime!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
 type Query {
   hello: String!
+  getTryOns: [TryOn!]!
 }
 
 type Mutation {
@@ -15,6 +27,7 @@ type Mutation {
   signup(input: SignupInput!): AuthOutput!
   login(input: LoginInput!): AuthOutput!
   getProfile: String!
+  tryOnClothes(input: TryOnInput!): String!
 }
 
 input SignupInput {
@@ -25,4 +38,9 @@ input SignupInput {
 input LoginInput {
   email: String!
   password: String!
+}
+
+input TryOnInput {
+  personUrl: String!
+  garmentUrl: String!
 }
