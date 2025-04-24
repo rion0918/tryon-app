@@ -39,26 +39,26 @@ export default function LoginPage() {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-[#faf9f6] px-4">
-      <div className="w-full max-w-md">
+      <div className="w-full sm:max-w-sm md:max-w-md lg:max-w-lg">
         {/* ロゴとブランド名 */}
-        <div className="text-center mb-8">
+        <div className="text-center mb-8 sm:mb-10">
           <Link href="/" className="inline-block">
-            <span className="font-serif text-3xl font-medium text-[#0f172a]">ELEGANCE</span>
+            <span className="font-serif text-xl sm:text-2xl text-[#0f172a] font-medium">AiSty</span>
           </Link>
         </div>
 
         {/* ログインカード */}
-        <div className="bg-white rounded-lg shadow-sm border border-[#e5e1d8] p-8 md:p-10">
-          <h1 className="font-serif text-2xl md:text-3xl text-[#0f172a] mb-6 text-center">ログイン</h1>
+        <div className="bg-white rounded-lg shadow-sm border border-[#e5e1d8] p-6 sm:p-8 md:p-10">
+          <h1 className="font-serif text-xl sm:text-2xl md:text-3xl text-[#0f172a] mb-6 text-center">ログイン</h1>
 
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="space-y-2">
-              <label htmlFor="email" className="block text-sm font-medium text-[#64748b]">
+              <label htmlFor="email" className="block text-sm sm:text-base font-medium text-[#64748b]">
                 メールアドレス
               </label>
               <input
                 id="email"
-                className="w-full border border-[#e5e1d8] rounded-md p-3 bg-white focus:outline-none focus:ring-2 focus:ring-[#d4af37] focus:border-transparent transition-all duration-200"
+                className="w-full sm:w-auto border border-[#e5e1d8] rounded-md p-3 bg-white focus:outline-none focus:ring-2 focus:ring-[#d4af37] focus:border-transparent transition-all duration-200 text-base sm:text-sm"
                 type="email"
                 placeholder="your@email.com"
                 value={email}
@@ -68,13 +68,13 @@ export default function LoginPage() {
             </div>
 
             <div className="space-y-2">
-              <label htmlFor="password" className="block text-sm font-medium text-[#64748b]">
+              <label htmlFor="password" className="block text-sm sm:text-base font-medium text-[#64748b]">
                 パスワード
               </label>
               <div className="relative">
                 <input
                   id="password"
-                  className="w-full border border-[#e5e1d8] rounded-md p-3 bg-white focus:outline-none focus:ring-2 focus:ring-[#d4af37] focus:border-transparent transition-all duration-200"
+                  className="w-full sm:w-auto border border-[#e5e1d8] rounded-md p-3 bg-white focus:outline-none focus:ring-2 focus:ring-[#d4af37] focus:border-transparent transition-all duration-200 text-base sm:text-sm"
                   type={showPassword ? "text" : "password"}
                   placeholder="••••••••"
                   value={password}
@@ -99,11 +99,11 @@ export default function LoginPage() {
                   type="checkbox"
                   className="h-4 w-4 text-[#d4af37] focus:ring-[#d4af37] border-[#e5e1d8] rounded"
                 />
-                <label htmlFor="remember-me" className="ml-2 block text-sm text-[#64748b]">
+                <label htmlFor="remember-me" className="ml-2 block text-sm sm:text-base text-[#64748b]">
                   ログイン状態を保存
                 </label>
               </div>
-              <div className="text-sm">
+              <div className="text-sm sm:text-base">
                 <Link
                   href="/forgot-password"
                   className="font-medium text-[#d4af37] hover:text-[#d4af37]/80 transition-colors duration-200"
@@ -114,13 +114,13 @@ export default function LoginPage() {
             </div>
 
             {error && (
-              <div className="bg-[#fef2f2] border border-[#fee2e2] text-[#b91c1c] p-3 rounded-md text-sm">
+              <div className="bg-[#fef2f2] border border-[#fee2e2] text-[#b91c1c] p-3 rounded-md text-sm sm:text-base">
                 ログインに失敗しました: {error.message}
               </div>
             )}
 
             <button
-              className="w-full bg-[#0f172a] text-white p-3 rounded-md hover:bg-[#0f172a]/90 transition-colors duration-200 font-medium"
+              className="w-full sm:w-auto bg-[#0f172a] text-white p-3 rounded-md hover:bg-[#0f172a]/90 transition-colors duration-200 font-medium text-base sm:text-sm"
               type="submit"
               disabled={loading}
             >
@@ -131,7 +131,7 @@ export default function LoginPage() {
 
         {/* 新規登録リンク */}
         <div className="text-center mt-6">
-          <p className="text-[#64748b]">
+          <p className="text-sm sm:text-base text-[#64748b]">
             アカウントをお持ちでないですか？{" "}
             <Link
               href="/signup"
@@ -144,7 +144,7 @@ export default function LoginPage() {
 
         {/* フッター */}
         <div className="text-center mt-12">
-          <p className="text-xs text-[#64748b]">&copy; {new Date().getFullYear()} ELEGANCE. All rights reserved.</p>
+          <p className="text-xs text-[#64748b]">&copy; {new Date().getFullYear()} AiSty. All rights reserved.</p>
         </div>
       </div>
     </div>

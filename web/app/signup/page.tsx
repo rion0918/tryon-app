@@ -66,27 +66,27 @@ export default function SignupPage() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-[#faf9f6] px-4">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-[#faf9f6] px-4 sm:px-6">
       <div className="w-full max-w-md">
         {/* ロゴとブランド名 */}
         <div className="text-center mb-8">
           <Link href="/" className="inline-block">
-            <span className="font-serif text-3xl font-medium text-[#0f172a]">ELEGANCE</span>
+            <span className="font-serif text-2xl sm:text-3xl font-medium text-[#0f172a]">AiSty</span>
           </Link>
         </div>
 
         {/* 新規登録カード */}
-        <div className="bg-white rounded-lg shadow-sm border border-[#e5e1d8] p-8 md:p-10">
-          <h1 className="font-serif text-2xl md:text-3xl text-[#0f172a] mb-6 text-center">新規登録</h1>
+        <div className="bg-white rounded-lg shadow-sm border border-[#e5e1d8] p-6 sm:p-8 md:p-10">
+          <h1 className="font-serif text-xl sm:text-2xl md:text-3xl text-[#0f172a] mb-6 text-center">新規登録</h1>
 
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="space-y-2">
-              <label htmlFor="email" className="block text-sm font-medium text-[#64748b]">
+              <label htmlFor="email" className="block text-sm sm:text-base font-medium text-[#64748b]">
                 メールアドレス
               </label>
               <input
                 id="email"
-                className="w-full border border-[#e5e1d8] rounded-md p-3 bg-white focus:outline-none focus:ring-2 focus:ring-[#d4af37] focus:border-transparent transition-all duration-200"
+                className="w-full border border-[#e5e1d8] rounded-md p-2 sm:p-3 bg-white focus:outline-none focus:ring-2 focus:ring-[#d4af37] focus:border-transparent transition-all duration-200"
                 type="email"
                 placeholder="your@email.com"
                 value={email}
@@ -96,13 +96,13 @@ export default function SignupPage() {
             </div>
 
             <div className="space-y-2">
-              <label htmlFor="password" className="block text-sm font-medium text-[#64748b]">
+              <label htmlFor="password" className="block text-sm sm:text-base font-medium text-[#64748b]">
                 パスワード
               </label>
               <div className="relative">
                 <input
                   id="password"
-                  className="w-full border border-[#e5e1d8] rounded-md p-3 bg-white focus:outline-none focus:ring-2 focus:ring-[#d4af37] focus:border-transparent transition-all duration-200"
+                  className="w-full border border-[#e5e1d8] rounded-md p-2 sm:p-3 bg-white focus:outline-none focus:ring-2 focus:ring-[#d4af37] focus:border-transparent transition-all duration-200"
                   type={showPassword ? "text" : "password"}
                   placeholder="••••••••"
                   value={password}
@@ -118,17 +118,17 @@ export default function SignupPage() {
                   {showPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
                 </button>
               </div>
-              <p className="text-xs text-[#64748b]">パスワードは8文字以上で設定してください</p>
+              <p className="text-xs sm:text-sm text-[#64748b]">パスワードは8文字以上で設定してください</p>
             </div>
 
             <div className="space-y-2">
-              <label htmlFor="confirm-password" className="block text-sm font-medium text-[#64748b]">
+              <label htmlFor="confirm-password" className="block text-sm sm:text-base font-medium text-[#64748b]">
                 パスワード（確認）
               </label>
               <div className="relative">
                 <input
                   id="confirm-password"
-                  className="w-full border border-[#e5e1d8] rounded-md p-3 bg-white focus:outline-none focus:ring-2 focus:ring-[#d4af37] focus:border-transparent transition-all duration-200"
+                  className="w-full border border-[#e5e1d8] rounded-md p-2 sm:p-3 bg-white focus:outline-none focus:ring-2 focus:ring-[#d4af37] focus:border-transparent transition-all duration-200"
                   type={showPassword ? "text" : "password"}
                   placeholder="••••••••"
                   value={confirmPassword}
@@ -136,7 +136,7 @@ export default function SignupPage() {
                   required
                 />
               </div>
-              {passwordError && <p className="text-xs text-[#b91c1c]">{passwordError}</p>}
+              {passwordError && <p className="text-xs sm:text-sm text-[#b91c1c]">{passwordError}</p>}
             </div>
 
             <div className="flex items-center">
@@ -149,7 +149,7 @@ export default function SignupPage() {
                 onChange={(e) => setAgreeTerms(e.target.checked)}
                 required
               />
-              <label htmlFor="agree-terms" className="ml-2 block text-sm text-[#64748b]">
+              <label htmlFor="agree-terms" className="ml-2 block text-sm sm:text-base text-[#64748b]">
                 <span>
                   <Link href="/terms" className="text-[#d4af37] hover:text-[#d4af37]/80 transition-colors duration-200">
                     利用規約
@@ -173,7 +173,7 @@ export default function SignupPage() {
             )}
 
             <button
-              className="w-full bg-[#0f172a] text-white p-3 rounded-md hover:bg-[#0f172a]/90 transition-colors duration-200 font-medium disabled:opacity-70 disabled:cursor-not-allowed"
+              className="w-full bg-[#0f172a] text-white p-2 sm:p-3 rounded-md hover:bg-[#0f172a]/90 transition-colors duration-200 font-medium disabled:opacity-70 disabled:cursor-not-allowed text-sm sm:text-base"
               type="submit"
               disabled={loading || !agreeTerms}
             >
@@ -184,7 +184,7 @@ export default function SignupPage() {
 
         {/* ログインリンク */}
         <div className="text-center mt-6">
-          <p className="text-[#64748b]">
+          <p className="text-sm sm:text-base text-[#64748b]">
             すでにアカウントをお持ちですか？{" "}
             <Link
               href="/login"
@@ -197,7 +197,7 @@ export default function SignupPage() {
 
         {/* フッター */}
         <div className="text-center mt-12">
-          <p className="text-xs text-[#64748b]">&copy; {new Date().getFullYear()} ELEGANCE. All rights reserved.</p>
+          <p className="text-xs sm:text-sm text-[#64748b]">&copy; {new Date().getFullYear()} AiSty. All rights reserved.</p>
         </div>
       </div>
     </div>

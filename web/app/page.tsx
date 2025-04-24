@@ -2,8 +2,6 @@ import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ChevronDown, CheckCircle, Sparkles, Zap, Users } from "lucide-react"
-import { LOGIN_MUTATION } from "@/graphql/mutations/login" // LOGIN 用
-import { SIGNUP_MUTATION } from '@/graphql/mutations/signup';// SIGNUP 用
 
 export default function Home() {
   return (
@@ -12,7 +10,7 @@ export default function Home() {
       <header className="fixed w-full bg-[#faf9f6]/80 backdrop-blur-sm z-50 border-b border-[#e5e1d8]">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <Link href="/" className="flex items-center">
-            <span className="font-serif text-2xl font-medium text-[#0f172a]">ELEGANCE</span>
+            <span className="font-serif text-2xl font-medium text-[#0f172a]">AiSty</span>
           </Link>
           <nav className="hidden md:flex space-x-8">
             <Link
@@ -214,13 +212,13 @@ export default function Home() {
               <p className="text-[#64748b] max-w-2xl mx-auto">実際のユーザーによるバーチャル試着の例をご覧ください</p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {[1, 2, 3, 4, 5, 6].map((item) => (
                 <div
                   key={item}
-                  className="overflow-hidden rounded-lg shadow-sm border border-[#e5e1d8] bg-white transition-transform duration-300 hover:translate-y-[-5px]"
+                  className="w-full mx-auto overflow-hidden rounded-lg shadow-sm border border-[#e5e1d8] bg-white transition-transform duration-300 hover:translate-y-[-5px]"
                 >
-                  <div className="relative h-80">
+                  <div className="relative aspect-[3/4] w-full">
                     <Image
                       src={`/placeholder.svg?height=400&width=300&text=Gallery+Image+${item}`}
                       alt={`バーチャル試着例 ${item}`}
@@ -257,7 +255,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
-              <h3 className="font-serif text-xl text-[#0f172a] mb-4">ELEGANCE</h3>
+              <h3 className="font-serif text-xl text-[#0f172a] mb-4">AiSty</h3>
               <p className="text-[#64748b]">最先端のバーチャル試着技術で、ファッションの未来を創造します。</p>
             </div>
 
@@ -334,7 +332,7 @@ export default function Home() {
           </div>
 
           <div className="border-t border-[#e5e1d8] mt-12 pt-8 text-center text-[#64748b]">
-            <p>&copy; {new Date().getFullYear()} ELEGANCE. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} AiSty. All rights reserved.</p>
           </div>
         </div>
       </footer>

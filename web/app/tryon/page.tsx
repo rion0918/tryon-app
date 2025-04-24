@@ -50,9 +50,9 @@ export default function TryOnPage() {
     <div className="min-h-screen bg-[#faf9f6] py-12 px-4">
       {/* ヘッダー */}
       <header className="container mx-auto mb-8">
-        <div className="flex justify-between items-center">
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-y-4 sm:gap-y-0">
           <Link href="/" className="flex items-center">
-            <span className="font-serif text-2xl font-medium text-[#0f172a]">ELEGANCE</span>
+            <span className="font-serif text-2xl font-medium text-[#0f172a]">AiSty</span>
           </Link>
           <nav className="flex space-x-4">
             <Button variant="ghost" className="text-[#0f172a] hover:text-[#d4af37]">
@@ -65,7 +65,7 @@ export default function TryOnPage() {
         </div>
       </header>
 
-      <div className="container mx-auto max-w-4xl">
+      <div className="container mx-auto w-full max-w-4xl px-4">
         <h1 className="font-serif text-3xl md:text-4xl text-[#0f172a] text-center mb-8">バーチャル試着</h1>
 
         {/* 試着フォーム */}
@@ -163,31 +163,32 @@ export default function TryOnPage() {
             </div>
           )}
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {data?.getTryOns?.map((item: any) => (
-              <Card
-                key={item.id}
-                className="overflow-hidden border-[#e5e1d8] shadow-sm hover:shadow-md transition-shadow duration-300"
-              >
-                <div className="aspect-[3/4] relative">
-                  <img
-                    src={item.imageUrl || "/placeholder.svg"}
-                    alt="試着結果"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <CardFooter className="bg-white p-4">
-                  <p className="text-sm text-[#64748b] w-full text-right">
-                    {new Date(item.createdAt).toLocaleString("ja-JP", {
-                      year: "numeric",
-                      month: "2-digit",
-                      day: "2-digit",
-                      hour: "2-digit",
-                      minute: "2-digit",
-                    })}
-                  </p>
-                </CardFooter>
-              </Card>
+              <div key={item.id} className="w-full">
+                <Card
+                  className="overflow-hidden border-[#e5e1d8] shadow-sm hover:shadow-md transition-shadow duration-300"
+                >
+                  <div className="aspect-[3/4] relative">
+                    <img
+                      src={item.imageUrl || "/placeholder.svg"}
+                      alt="試着結果"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <CardFooter className="bg-white p-4">
+                    <p className="text-sm text-[#64748b] w-full text-right">
+                      {new Date(item.createdAt).toLocaleString("ja-JP", {
+                        year: "numeric",
+                        month: "2-digit",
+                        day: "2-digit",
+                        hour: "2-digit",
+                        minute: "2-digit",
+                      })}
+                    </p>
+                  </CardFooter>
+                </Card>
+              </div>
             ))}
           </div>
         </div>
