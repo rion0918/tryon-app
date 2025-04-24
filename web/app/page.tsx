@@ -10,7 +10,7 @@ export default function Home() {
       <header className="fixed w-full bg-[#faf9f6]/80 backdrop-blur-sm z-50 border-b border-[#e5e1d8]">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <Link href="/" className="flex items-center">
-            <span className="font-serif text-2xl font-medium text-[#0f172a]">AiSty</span>
+            <span className="font-serif text-4xl font-medium text-[#0f172a]">AiSty</span>
           </Link>
           <nav className="hidden md:flex space-x-8">
             <Link
@@ -69,7 +69,7 @@ export default function Home() {
               あなたのスタイルを、<span className="text-[#d4af37]">バーチャルで</span>体験する新しい方法
             </h1>
             <p className="text-lg md:text-xl text-[#64748b] mb-10 max-w-2xl mx-auto">
-              最先端のAI技術を活用した当社のバーチャル試着アプリで、購入前に完璧なフィット感を体験してください。
+              最先端のAI技術を活用したAiStyで、購入前に気になる服とあなたとの相性を確かめてみてください。
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
@@ -116,7 +116,7 @@ export default function Home() {
                   <span className="font-serif text-xl text-[#0f172a]">1</span>
                 </div>
                 <h3 className="font-serif text-xl text-[#0f172a] mb-4">アカウント作成</h3>
-                <p className="text-[#64748b]">簡単な登録プロセスで、パーソナライズされた体験を始めましょう。</p>
+                <p className="text-[#64748b]">簡単な登録プロセスで、未知の体験を始めましょう。</p>
               </div>
 
               <div className="bg-white p-8 rounded-lg shadow-sm border border-[#e5e1d8] transition-transform duration-300 hover:translate-y-[-5px]">
@@ -125,7 +125,7 @@ export default function Home() {
                 </div>
                 <h3 className="font-serif text-xl text-[#0f172a] mb-4">写真をアップロード</h3>
                 <p className="text-[#64748b]">
-                  あなたの写真をアップロードして、パーソナライズされた試着体験を始めましょう。
+                  あなたの写真をアップロードして、新たな試着体験を始めましょう。
                 </p>
               </div>
 
@@ -135,7 +135,7 @@ export default function Home() {
                 </div>
                 <h3 className="font-serif text-xl text-[#0f172a] mb-4">バーチャル試着</h3>
                 <p className="text-[#64748b]">
-                  数千のアイテムをバーチャルで試着して、あなたに最適なスタイルを見つけましょう。
+                  気になる衣服をバーチャルで試着して、あなたに最適なスタイルを見つけましょう。
                 </p>
               </div>
             </div>
@@ -170,9 +170,9 @@ export default function Home() {
                   <Sparkles className="w-6 h-6 text-[#d4af37]" />
                 </div>
                 <div>
-                  <h3 className="font-serif text-xl text-[#0f172a] mb-2">リアルタイムのスタイル提案</h3>
+                  <h3 className="font-serif text-xl text-[#0f172a] mb-2">??????</h3>
                   <p className="text-[#64748b]">
-                    あなたの好みや体型に基づいて、パーソナライズされたスタイル提案をリアルタイムで受け取れます。
+                    ???????????????
                   </p>
                 </div>
               </div>
@@ -182,9 +182,9 @@ export default function Home() {
                   <Zap className="w-6 h-6 text-[#d4af37]" />
                 </div>
                 <div>
-                  <h3 className="font-serif text-xl text-[#0f172a] mb-2">瞬時に切り替え可能</h3>
+                  <h3 className="font-serif text-xl text-[#0f172a] mb-2">瞬時に比較</h3>
                   <p className="text-[#64748b]">
-                    数千のアイテムを瞬時に切り替えて試着できるため、効率的にショッピングを楽しめます。
+                    気になる服が複数の場合は同時に3着まで試着ができ、比較が可能です。
                   </p>
                 </div>
               </div>
@@ -239,13 +239,15 @@ export default function Home() {
         {/* CTAセクション */}
         <section className="py-24 bg-[#0f172a] text-white">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="font-serif text-3xl md:text-4xl mb-6">あなたのスタイルを見つける旅を始めましょう</h2>
+            <h2 className="font-serif text-3xl md:text-4xl mb-6">AiStyで気になる衣服と最適な出会いを</h2>
             <p className="text-lg text-gray-300 mb-10 max-w-2xl mx-auto">
-              今すぐ登録して、バーチャル試着の新しい体験を始めましょう。
+              今すぐ登録して、AiStyの新しい体験を始めましょう。
             </p>
-            <Button className="bg-[#d4af37] text-[#0f172a] hover:bg-[#d4af37]/90 transition-colors duration-300 px-8 py-6 text-lg">
-              無料で始める
-            </Button>
+            <Link href="/signup">
+              <Button className="bg-[#d4af37] text-[#0f172a] hover:bg-[#d4af37]/90 transition-colors duration-300 px-8 py-6 text-lg">
+                さっそく始める
+              </Button>
+            </Link>
           </div>
         </section>
       </main>
@@ -256,7 +258,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
               <h3 className="font-serif text-xl text-[#0f172a] mb-4">AiSty</h3>
-              <p className="text-[#64748b]">最先端のバーチャル試着技術で、ファッションの未来を創造します。</p>
+              <p className="text-[#64748b]">ECサイトでの衣服の購入をサポートします。</p>
             </div>
 
             <div>
