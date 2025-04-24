@@ -1,9 +1,15 @@
+// main.ts
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule, { cors: true });
+  const app = await NestFactory.create(AppModule);
 
-  await app.listen(3000);
+  app.enableCors({
+    origin: 'http://localhost:3000', // フロントエンドURL
+    credentials: true,
+  });
+
+  await app.listen(3001);
 }
 bootstrap();
