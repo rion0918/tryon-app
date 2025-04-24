@@ -3,7 +3,6 @@ import './globals.css';
 import { Metadata } from 'next';
 import { Playfair_Display, Inter } from 'next/font/google';
 import { Providers } from './providers';
-import { ThemeProvider } from '@/components/theme-provider';
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -24,11 +23,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="ja" className={`${playfair.variable} ${inter.variable}`} suppressHydrationWarning>
       <body className="font-sans">
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
-          <Providers>
-            {children}
-          </Providers>
-        </ThemeProvider>
+        <Providers>
+          {children}
+        </Providers>
       </body>
     </html>
   );
