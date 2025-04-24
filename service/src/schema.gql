@@ -2,10 +2,27 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+type AuthOutput {
+  accessToken: String!
+}
+
 type Query {
   hello: String!
 }
 
 type Mutation {
   sayHello: String!
+  signup(input: SignupInput!): AuthOutput!
+  login(input: LoginInput!): AuthOutput!
+  getProfile: String!
+}
+
+input SignupInput {
+  email: String!
+  password: String!
+}
+
+input LoginInput {
+  email: String!
+  password: String!
 }
