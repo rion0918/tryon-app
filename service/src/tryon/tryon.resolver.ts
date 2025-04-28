@@ -6,16 +6,17 @@ import { Resolver, Mutation, Args, Query } from '@nestjs/graphql';
 import { TryOnService } from './tryon.service';
 import { TryOn } from './dto/tryon.model';
 
-@Resolver()
+@Resolver(() => TryOn)
 export class TryOnResolver {
   constructor(private tryOnService: TryOnService) {}
 
-  @Mutation(() => String)
+  @Mutation(() => String, { name: 'tryOnClothes' })
   @UseGuards(GqlAuthGuard)
   async tryOnClothes(
     @Args('input') input: TryOnInput,
     @CurrentUser() user: { userId: number },
   ): Promise<string> {
+    console.log('tryOnClothes resolver called', input);
     return this.tryOnService.tryOnClothes(
       user.userId,
       input.personUrl,
@@ -23,7 +24,7 @@ export class TryOnResolver {
     );
   }
 
-  @Query(() => [TryOn])
+  @Query(() => [TryOn], { name: 'getTryOns' })
   @UseGuards(GqlAuthGuard)
   async getTryOns(@CurrentUser() user: { userId: number }): Promise<TryOn[]> {
     return this.tryOnService.getTryOns(user.userId);
