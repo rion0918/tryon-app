@@ -11,7 +11,6 @@ import { TryOnModule } from './tryon/tryon.module';
       driver: ApolloDriver,
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
     }),
-    HelloModule,
     AuthModule,
     TryOnModule,
   ],

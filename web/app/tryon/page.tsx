@@ -60,7 +60,7 @@ export default function TryOnPage() {
       <header className="container mx-auto mb-8">
         <div className="flex flex-col sm:flex-row justify-between items-center gap-y-4 sm:gap-y-0">
           <Link href="/" className="flex items-center">
-            <span className="font-serif text-2xl font-medium text-[#0f172a]">AiSty</span>
+            <span className="font-serif text-4xl font-medium text-[#0f172a]">AiSty</span>
           </Link>
           <nav className="flex space-x-4">
             <Button variant="ghost" className="text-[#0f172a] hover:text-[#d4af37]">
@@ -79,7 +79,7 @@ export default function TryOnPage() {
         {/* 試着フォーム */}
         <Card className="mb-12 border-[#e5e1d8] shadow-sm">
           <CardHeader>
-            <CardTitle className="font-serif text-2xl text-[#0f172a]">新しい試着</CardTitle>
+            <CardTitle className="font-serif text-2xl text-[#0f172a]">ここから試着</CardTitle>
             <CardDescription>画像URLを入力して、バーチャル試着を体験しましょう</CardDescription>
           </CardHeader>
           <CardContent>

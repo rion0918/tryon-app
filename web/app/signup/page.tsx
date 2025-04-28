@@ -71,7 +71,7 @@ export default function SignupPage() {
         {/* ロゴとブランド名 */}
         <div className="text-center mb-8">
           <Link href="/" className="inline-block">
-            <span className="font-serif text-2xl sm:text-3xl font-medium text-[#0f172a]">AiSty</span>
+            <span className="font-serif text-4xl sm:text-3xl font-medium text-[#0f172a]">AiSty</span>
           </Link>
         </div>
 

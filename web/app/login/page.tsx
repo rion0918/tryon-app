@@ -43,7 +43,7 @@ export default function LoginPage() {
         {/* ロゴとブランド名 */}
         <div className="text-center mb-8 sm:mb-10">
           <Link href="/" className="inline-block">
-            <span className="font-serif text-xl sm:text-2xl text-[#0f172a] font-medium">AiSty</span>
+            <span className="font-serif text-xl sm:text-4xl text-[#0f172a] font-medium">AiSty</span>
           </Link>
         </div>
 
